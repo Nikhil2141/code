@@ -1,0 +1,35 @@
+javascript exeution context
+code ==> Global EC -> this
+
+       *Global EC
+       *Function EC
+       *Eval EC
+
+
+code ==> memory creation phase
+     ==> execution phase
+
+
+example: let var1 =10
+         let var1 =10
+         function addnum(num1,num2){
+               let total = num1 +num2
+               return total
+           }
+        let resulat1 = addnum(var1,var2)
+        let resulat2 = addnum(10,2)
+
+step:1    Global Execution (in this)
+step:2    Memory phase
+            var1 -> undefined
+            var2 -> undefined
+            addnum -> defintion
+            resulat1 ->undefined
+	    resulat2 ->undefined
+step:3    Execution phase
+             var1 -> 10
+             var2 -> 2
+             addnum --> new varlable enivroment + execution thread------>memory phase---------->Execution phase
+             result1 = 12                                              num1=unundefined         num1 -> 10
+                                                                         num2=undefined           num2-> 2
+                                                                         total=undefined          total->12
